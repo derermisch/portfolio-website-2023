@@ -1,0 +1,83 @@
+.kontakt--formContainer {
+    height: 100%;
+
+    &--heading {
+        text-decoration: underline;
+        margin-bottom: .5rem;
+        width: fit-content;
+    }
+
+    &--form {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: .5rem;
+        // width: 60%;
+    }
+}
+
+.kontakt--formContainer--form {
+    >* {
+        grid-column: 1 / 3;
+        font-size: $Fs-p;
+        padding: 1rem;
+        border: none;
+        background-color: $Color-LightGreen;
+        border-radius: 4px;
+    }
+
+    >*::placeholder {
+        color: black;
+    }
+
+    &--anrede {
+        grid-column: 1 / 2;
+    }
+
+    &--name {
+        grid-column: 2 / 3;
+    }
+
+    &--nachricht {
+        resize: none;
+        height: 400px;
+    }
+
+    &--submitContainer {
+        @include flexIt($alignIt: flex-start);
+        gap: .5rem;
+        background-color: unset;
+        padding: unset;
+        // backdrop-filter: brightness(1.5);
+        // background-color: #F6F6F8;
+    }
+}
+
+.kontakt--formContainer--form--submitContainer {
+    &--submitBtn {
+        padding: .5rem;
+        border: none;
+        background-color: $Color-DarkGreen;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    &--text {
+        font-size: $Fs-p;
+    }
+}
+
+@include for-phone {
+    .kontakt--formContainer--form {
+        &--name {
+            grid-column: 1 / 3;
+        }
+
+        &--tel {
+            grid-column: 1 / 3;
+        }
+
+        &--anrede {
+            grid-column: 1 / 3;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+// General
+$Svg-Size: 32px;
+
+// Sites
+$Sites-PaddingBlock: 4rem;
+$Sites-PaddingInline: 6rem;
+$Sites-PaddingBlock-Mobile: 40px;
+$Sites-PaddingInline-Mobile: 40px;
+
+// Container sizing
+$Container-maxWidth: 1920px;
+$Container-width: 60%;
+$Container-width-tablet: 80%;
+$Container-width-mobile: 100%;
+
+// Buttons
+$Btn-BorderWidth: .2em; //em unit: relative to fontsize on current button
+$Bn-Padding: .5em;
+
+// Navbar
+$Navbar-MarginInline: 1rem;
+
+// Navbar--hamburger
+$Navbar-HamburgerWidth: 32px * 1.5;
+$Navbar-HamburgerHeight: 24px * 1.5;

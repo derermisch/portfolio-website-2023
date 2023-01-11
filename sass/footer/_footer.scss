@@ -1,0 +1,32 @@
+.footer {
+    @include flexIt($dir: row, $alignIt: flex-start);
+    gap: 3rem;
+    background-color: $Color-DarkGreen;
+    padding-block: $Sites-PaddingBlock;
+
+    >* {
+        @include flexIt($dir: column, $alignIt: flex-start);
+        gap: .5rem;
+    }
+}
+
+.footer--navigation {
+    >a {
+        cursor: pointer;
+    }
+}
+
+@include for-phone {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+
+        >* {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+}
+
+@import "./scrollUpButton";

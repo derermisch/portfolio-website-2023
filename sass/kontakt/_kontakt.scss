@@ -1,0 +1,42 @@
+.kontakt {
+    // max-width: $Container-maxWidth;
+    
+    &--heading {
+        font-size: $Fs-h1;
+        margin-bottom: 1.5rem;
+        width: fit-content;
+    }
+    
+    > * {
+        width: $Container-width;
+        // width: 40vw;
+        // width: calc(.4 * (1920px - ($Sites-PaddingInline / 2)));
+        // max-width: calc(.7 * 1920px)
+    }
+}
+
+@import "./direktContainer";
+
+@include for-biggerScreens () {
+    .kontakt {
+        > * {
+            width: calc($Container-width - 10%);
+        }
+    }
+}
+
+@include for-tablet {
+    .kontakt {
+        > * {
+            width: $Container-width-tablet;
+        }
+    }
+}
+
+@include for-phone {
+    .kontakt {
+        > * {
+            width: $Container-width-mobile;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@mixin flexIt($dir: row, $justCont: center, $alignIt: center) {
+    display: flex;
+    justify-content: $justCont;
+    align-items: $alignIt;
+    flex-direction: $dir;
+}
+
+@mixin for-phone {
+    @media (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin for-phone-medium {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin for-phone-small {
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin for-smallLaptop {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin for-biggerScreens {
+    @media (width >= 1920px){
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}

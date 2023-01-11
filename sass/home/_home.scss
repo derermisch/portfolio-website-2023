@@ -1,0 +1,90 @@
+@import "./navbar/navbar";
+
+.home {
+    height: 100vh;
+    @include flexIt($dir: column, $justCont: space-between);
+    text-align: center;
+
+    &--headingContainer {
+        position: relative;
+        top: 30vh;
+        @include flexIt($dir: column);
+        // gap: 1rem;
+    }
+
+    &--welcomeContainer {
+        @include flexIt($dir: column, $justCont: flex-end);
+    }
+}
+
+.home--headingContainer {
+    &--heading {
+        position: absolute;
+        top: 15%;
+        font-weight: 500;
+        font-size: $Fs-huge;
+    }
+}
+
+$Max-height: 80vh;
+$Img-height: calc(.75 * $Max-height);
+$Button-height: calc($Max-height - $Img-height);
+
+.home--welcomeContainer {
+    &--img {
+        height: $Img-height;
+        // width: 100%;
+        z-index: 1;
+        margin-right: 6vw;
+        margin-bottom: -10px;
+        object-fit: cover;
+    }
+
+    &--buttonContainer {
+        @include flexIt($dir: column);
+        height: $Button-height;
+        // width: max-content;
+        width: 100%;
+    }
+}
+
+.home--welcomeContainer--buttonContainer {
+    >* {
+        cursor: pointer;
+        @include flexIt();
+        font-size: $Fs-h2;
+        font-weight: 500;
+        text-decoration: none;
+        height: 100%;
+        width: 50%;
+        border: 8px solid var(--foreground);
+    }
+
+    >:first-child {
+        border-color: var(--clr-action);
+    }
+}
+
+@include for-phone {
+    $Img-height: calc(.6 * $Max-height);
+
+    .home--headingContainer {
+        &--heading {
+            top: 18%;
+            font-size: $Fs-huge-mobile;
+        }
+    }
+    
+    .home--welcomeContainer {
+        &--img {
+            height: $Img-height;
+            margin-right: 10vw;
+        }
+    }
+
+    .home--welcomeContainer--buttonContainer {
+        >* {
+            border-width: 4px;
+        }
+    }
+}

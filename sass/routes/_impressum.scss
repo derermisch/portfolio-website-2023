@@ -1,0 +1,8 @@
+.impressum {
+    @include flexIt($dir: column, $alignIt: flex-start, $justCont: flex-start);
+    background-color: $Color-Background;
+
+    &--heading {
+        margin-block: 2rem;
+    }
+}

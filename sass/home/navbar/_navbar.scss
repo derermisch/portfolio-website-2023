@@ -1,0 +1,69 @@
+@import "./hamburger";
+
+.nav {
+    @include flexIt($dir: row, $justCont: space-between);
+
+    &--links {
+        font-size: $Fs-link;
+        list-style: none;
+        @include flexIt();
+        gap: 1.5rem;
+    }
+
+    &--hamburger {
+        display: none;
+    }
+}
+
+.nav--links {
+    >:nth-child(3) {
+        padding: 5px;
+        border: 4px solid var(--foreground);
+    }
+
+    &--link {
+        @include flexIt($dir: row);
+        text-decoration: none;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    &--link>* {
+        font-size: $Fs-link;
+    }
+
+    // &--link--text {
+    //     margin-left: .3rem;
+    // }
+}
+
+@include for-phone {
+    .nav {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .nav--links {
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--background);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 500ms ease-in-out;
+
+        >:nth-child(3) {
+            padding: 5px;
+            border: 2px solid var(--clr-action);
+        }
+    }
+
+    .nav--links.openNav {
+        visibility: visible;
+        transform: translateX(0%);
+    }
+}

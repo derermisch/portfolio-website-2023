@@ -1,0 +1,105 @@
+.angebote {
+    // max-width: $Container-maxWidth;
+
+    > * {
+        width: $Container-width;
+    }
+
+    &--header {
+        margin-bottom: 2rem;
+        width: fit-content;
+    }
+
+    &--container {
+        @include flexIt($dir: column, $alignIt: flex-start);
+        gap: 1rem;
+    }
+}
+
+.angebote--header {
+    &--heading {
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    &--text {
+        font-weight: 400;
+    }
+}
+
+.angebote--container {
+    &--angebot {
+        width: 100%;
+    }
+}
+
+.angebote--container--angebot {
+    &--headingContainer {
+        width: 100%;
+        @include flexIt($justCont: flex-start);
+        border: none;
+        background-color: $Color-LightGreen;
+        cursor: pointer;
+        text-align: left;
+        padding: .5rem;
+        border-radius: 4px;
+    }
+
+    &--headingContainer[isopen="true"] {
+        background-color: $Color-DarkGreen;
+    }
+
+    &--textContainer {
+        width: calc(100% + 20%);
+        margin: .5rem;
+        margin-bottom: unset;
+        font-weight: 300;
+    }
+}
+
+.angebote--container--angebot--headingContainer {
+    &--heading {
+        font-size: $Fs-h2;
+        margin-left: .5rem;
+        font-weight: 400;
+        background-color: unset;
+    }
+}
+
+@include for-biggerScreens () {
+    .angebote {
+        > * {
+            width: calc($Container-width - 10%);
+        }
+    }
+}
+
+@include for-tablet () {
+    .angebote {
+        > * {
+            width: $Container-width-tablet;
+        }
+    }
+}
+
+@include for-phone () {
+    .angebote {
+        > * {
+            width: $Container-width-mobile;
+        }
+    }
+
+    .angebote--container--angebot {
+        &--textContainer {
+            width: 100%;
+        }
+    }
+}
+
+@include for-phone-small () {
+    .angebote--container--angebot--headingContainer {
+        &--heading {
+            font-size: $Fs-h3;
+        }
+    }
+}

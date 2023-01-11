@@ -1,0 +1,47 @@
+.anfahrt {
+    // max-width: $Container-maxWidth;
+
+    > * {
+        width: $Container-width;
+    }
+
+    &--heading {
+        width: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    &--map {
+        height: 30vh;
+
+        > * > * {
+            width: 100%;
+        }
+    }
+}
+
+@import "./adressContainer";
+@import "./wegbeschreibungContainer";
+
+@include for-biggerScreens () {
+    .anfahrt {
+        > * {
+            width: calc($Container-width - 10%);
+        }
+    }
+}
+
+@include for-tablet () {
+    .anfahrt {
+        > * {
+            width: $Container-width-tablet;
+        }
+    }
+}
+
+@include for-phone () {
+    .anfahrt {
+        > * {
+            width: $Container-width-mobile;
+        }
+    }
+}

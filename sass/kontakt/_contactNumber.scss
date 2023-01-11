@@ -1,0 +1,31 @@
+.kontakt--direktContainer--container--numberContainer--number {
+    @include flexIt($justCont: space-between);
+
+    &--heading::after {
+        content: ":"
+    }
+
+    &--num {
+        text-decoration-color: $Color-DarkGreen;
+        @include flexIt($dir: row-reverse);
+        margin-left: 1rem
+    }
+
+    &--num:visited {
+        text-decoration-color: darken($color: $Color-DarkGreen, $amount: 10);
+    }
+}
+
+.kontakt--direktContainer--container--numberContainer--number--num {
+
+    &--text,
+    &--text:visited {
+        color: darken($color: $Color-DarkGreen, $amount: 10);
+    }
+
+    &--icon {
+        margin-left: .5rem;
+    }
+}
+
+@import "./formular";

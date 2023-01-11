@@ -1,0 +1,18 @@
+:root {
+    --clr-primary: #404040;
+    --clr-secondary: #F8F7FF;
+    --clr-action: #EF6461;
+
+    --foreground: var(--clr-primary);
+    --background: var(--clr-secondary);
+}
+
+.dark {
+    --foreground: var(--clr-secondary);
+    --background: var(--clr-primary);
+}
+
+.light {
+    --foreground: var(--clr-primary);
+    --background: var(--clr-secondary);
+}
