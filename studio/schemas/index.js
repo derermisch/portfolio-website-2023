@@ -1,8 +1,8 @@
 import blockContent from './blockContent'
 import telNummern from './telNummern'
 import home from "./home"
-import angebote from "./angebote"
-import angeboteDaten from "./angeboteDaten"
+import projectsite from "./projectsite"
+import projectData from "./projectData"
 import kontakt from './kontakt'
 import anfahrt from './anfahrt'
 import datenschutz from './datenschutz'
@@ -15,8 +15,8 @@ export const schemaTypes = [
     telNummern,
     blockContent,
     home,
-    angebote,
-    angeboteDaten,
+    projectsite,
+    projectData,
     kontakt,
     anfahrt,
     datenschutz,

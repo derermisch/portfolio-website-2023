@@ -1,5 +1,5 @@
 .settingsToggle {
-    position: fixed;
+    position: absolute;
     top: calc($Sites-PaddingBlock-Mobile + 5px);
     right: $Sites-PaddingInline-Mobile;
     @include flexIt();
