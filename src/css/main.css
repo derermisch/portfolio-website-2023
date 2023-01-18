@@ -694,6 +694,72 @@ textarea {
   cursor: pointer;
 }
 
+.contact {
+  min-height: 100vh;
+}
+
+.contact--form {
+  margin-left: 10vw;
+  margin-top: 5vw;
+  display: grid;
+  grid-template-rows: repeat(4, -webkit-min-content);
+  grid-template-rows: repeat(4, min-content);
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  row-gap: 0.5rem;
+  -webkit-column-gap: 4em;
+     -moz-column-gap: 4em;
+          column-gap: 4em;
+}
+.contact--form > label {
+  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+}
+.contact--form > input,
+.contact--form > textarea {
+  padding: 1rem;
+  border: 2px solid var(--foreground);
+  background-color: transparent;
+  font-size: clamp(1rem, 0.5vw + 0.5rem, 2rem);
+  font-family: soleil, sans-serif;
+}
+.contact--form > textarea {
+  height: 40vh;
+  resize: none;
+}
+.contact--form > input:focus,
+.contact--form > textarea:focus {
+  outline: none;
+  border-style: dotted;
+  border-color: var(--clr-action);
+  caret-color: var(--foreground);
+}
+
+.contact--form--submitContainer {
+  grid-column: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.contact--form--submitContainer--text {
+  width: 60%;
+  font-size: clamp(0.8rem, 0.3vw + 0.5rem, 1.5rem);
+}
+.contact--form--submitContainer--submitBtn {
+  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  border: none;
+  cursor: pointer;
+}
+
 .loaderWrapper {
   position: fixed;
   width: 100%;

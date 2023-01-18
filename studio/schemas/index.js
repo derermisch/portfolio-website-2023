@@ -3,7 +3,7 @@ import telNummern from './telNummern'
 import home from "./home"
 import projectsite from "./projectsite"
 import projectData from "./projectData"
-import kontakt from './kontakt'
+import contact from './contact'
 import anfahrt from './anfahrt'
 import datenschutz from './datenschutz'
 import impressum from './impressum'
@@ -19,7 +19,7 @@ export const schemaTypes = [
     home,
     projectsite,
     projectData,
-    kontakt,
+    contact,
     anfahrt,
     datenschutz,
     impressum,
