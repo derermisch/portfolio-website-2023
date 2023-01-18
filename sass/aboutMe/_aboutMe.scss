@@ -1,0 +1,14 @@
+.aboutMe {
+    min-height: 100vh;
+
+    &--listContainer {
+        max-width: 1200px;
+        width: 80%;
+        margin-left: 10vw;
+        margin-top: 5vh;
+        @include flexIt($justCont: flex-start, $dir: column, $alignIt: flex-start);
+        gap: 1rem;
+    }
+}
+
+@import "./aboutMeItem";

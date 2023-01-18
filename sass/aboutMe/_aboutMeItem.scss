@@ -1,0 +1,35 @@
+.aboutMe--listContainer--listItem {
+    width: 100%;
+
+    &--textContainer {
+        margin-left: 5vw;
+        margin-top: .5rem;
+    }
+}
+
+.aboutMe--listContainer--listItem--headingContainer {
+    @include flexIt($dir: row, $justCont: flex-start, $alignIt: flex-end);
+    // gap: .5rem;
+
+    &--number {
+        font-size: $Fs-h2;
+        font-weight: 400;
+        color: var(--background);
+        -webkit-text-stroke: .2vw var(--foreground);
+        width: calc($Fs-h2 + 3.5%);
+    }
+
+    &--heading {
+        font-size: $Fs-h3;
+    }
+
+    &--arrow {
+        margin-left: .5rem;
+        background-color: transparent;
+        align-self: flex-end;
+        font-size: $Fs-h3;
+        color: var(--clr-action);
+        border: none;
+        cursor: pointer;
+    }
+}

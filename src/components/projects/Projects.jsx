@@ -1,22 +1,21 @@
 import { useInView } from "react-intersection-observer"
 
-import ProjectsHeading from "./ProjectsHeading"
 import ProjectContainer from "./ProjectContainer"
 import { DataSource, getServerData } from "../general/DataSource"
-import { useEffect } from "react"
+import Heading from "../general/Heading"
 
 export default function Projects() {
     const { ref, inView, entry } = useInView({
         threshold: 0.1
     })
-    
+
     return (
         <section className="projects" ref={ref}>
             <DataSource
                 getDataFunc={getServerData('*[_type == "projectsite"][0].heading')}
                 resourceName="headingArr"
             >
-                <ProjectsHeading />
+                <Heading className="projects--heading" />
             </DataSource>
 
             <DataSource

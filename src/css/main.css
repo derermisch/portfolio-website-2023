@@ -21,11 +21,11 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.4rem, 0.6vw + 1rem, 4rem);
+  font-size: clamp(2rem, 3.5vw + 1rem, 6rem);
 }
 
 h3 {
-  font-size: clamp(1rem, 0.5vw + 1rem, 2rem);
+  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
 }
 
 h4 {
@@ -45,7 +45,7 @@ h4,
 h5,
 h6 {
   font-family: fenwick, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -467,7 +467,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: clamp(1.4rem, 0.6vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
   font-weight: 500;
   text-decoration: none;
   height: 100%;
@@ -626,6 +626,74 @@ textarea {
     width: 25vw;
   }
 }
+.aboutMe {
+  min-height: 100vh;
+}
+.aboutMe--listContainer {
+  max-width: 1200px;
+  width: 80%;
+  margin-left: 10vw;
+  margin-top: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.aboutMe--listContainer--listItem {
+  width: 100%;
+}
+.aboutMe--listContainer--listItem--textContainer {
+  margin-left: 5vw;
+  margin-top: 0.5rem;
+}
+
+.aboutMe--listContainer--listItem--headingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.aboutMe--listContainer--listItem--headingContainer--number {
+  font-size: clamp(2rem, 3.5vw + 1rem, 6rem);
+  font-weight: 400;
+  color: var(--background);
+  -webkit-text-stroke: 0.2vw var(--foreground);
+  width: calc(clamp(2rem, 3.5vw + 1rem, 6rem) + 3.5%);
+}
+.aboutMe--listContainer--listItem--headingContainer--heading {
+  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+}
+.aboutMe--listContainer--listItem--headingContainer--arrow {
+  margin-left: 0.5rem;
+  background-color: transparent;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  color: var(--clr-action);
+  border: none;
+  cursor: pointer;
+}
+
 .loaderWrapper {
   position: fixed;
   width: 100%;

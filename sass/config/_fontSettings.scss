@@ -7,10 +7,12 @@ $Fs-huge-mobile: clamp(2rem, 6vw + 1rem, 13rem);
 $Fs-h1: clamp(3rem, 6vw + 1rem, 10rem);
 
 // h2
-$Fs-h2: clamp(1.4rem, .6vw + 1rem, 4rem);
+// $Fs-h2: clamp(1.4rem, .6vw + 1rem, 4rem);
+$Fs-h2: clamp(2rem, 3.5vw + 1rem, 6rem);
 
 // h3
-$Fs-h3: clamp(1rem, .5vw + 1rem, 2rem);
+// $Fs-h3: clamp(1rem, .5vw + 1rem, 2rem);
+$Fs-h3: clamp(1.5rem, 1vw + 1rem, 4rem);
 
 // h4
 $Fs-h4: clamp(1rem, .1vw + 1rem, 2rem);
@@ -52,6 +54,6 @@ h4,
 h5,
 h6 {
     font-family: fenwick, sans-serif;
-    font-weight: 700; //bold
+    font-weight: 500; //bold
     font-style: normal;
 }

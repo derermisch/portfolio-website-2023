@@ -10,6 +10,8 @@ import impressum from './impressum'
 import sonstiges from './sonstiges'
 import navigation from './navigation'
 import navlinks from './navlinks'
+import aboutMeItem from "./aboutMeItem"
+import aboutMe from "./aboutMe"
 
 export const schemaTypes = [
     telNummern,
@@ -23,5 +25,7 @@ export const schemaTypes = [
     impressum,
     sonstiges,
     navigation,
-    navlinks
+    navlinks,
+    aboutMeItem,
+    aboutMe
 ]

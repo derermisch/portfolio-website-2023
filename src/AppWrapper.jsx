@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { ClipLoader } from "react-spinners"
 
-import InsertBackgroundImage from "./components/general/InsertBackgroundImage"
 import App from "./App"
 
 export default function AppWrapper() {
