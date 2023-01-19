@@ -33,3 +33,25 @@
         margin-top: calc($MainElement-marginTop / 2);
     }
 }
+
+@include for-phone {
+    .projects {
+        padding-right: $Sites-PaddingBlock-Mobile;
+
+        &--gradient {
+            display: none;
+        }
+
+        &--projectContainer {
+            margin-left: unset;
+            overflow-x: unset;
+            gap: 1rem;
+            padding-right: unset;
+
+            // width: calc(100% - $Sites-PaddingInline-Mobile);
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

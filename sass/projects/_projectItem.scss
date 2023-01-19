@@ -70,3 +70,12 @@
         }
     }
 }
+
+@include for-phone {
+    .projects--projectContainer--projectItem {
+        width: 100%;
+        &--img {
+            width: 100%;
+        }
+    }
+}

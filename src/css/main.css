@@ -636,10 +636,35 @@ textarea {
     width: 25vw;
   }
 }
+@media (max-width: 500px) {
+  .projects--projectContainer--projectItem {
+    width: 100%;
+  }
+  .projects--projectContainer--projectItem--img {
+    width: 100%;
+  }
+}
 @media (max-width: 1024px) {
   .projects--projectContainer {
     margin-left: 5vw;
     margin-top: 2.5vh;
+  }
+}
+@media (max-width: 500px) {
+  .projects {
+    padding-right: 40px;
+  }
+  .projects--gradient {
+    display: none;
+  }
+  .projects--projectContainer {
+    margin-left: unset;
+    overflow-x: unset;
+    gap: 1rem;
+    padding-right: unset;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .aboutMe {
