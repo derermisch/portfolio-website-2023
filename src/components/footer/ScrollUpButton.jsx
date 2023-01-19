@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useLocation } from "react-router-dom"
 
-import { determineIfMobile, scrollToLocation, throttle } from "../../utils"
+import { determineIfMobile, scrollToLocation, throttle } from "../../utils/utils"
 
 export default function ScrollUpButton() {
     const location = useLocation().pathname

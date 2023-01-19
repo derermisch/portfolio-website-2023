@@ -3,7 +3,7 @@ import { GrHome, GrBusinessService, GrContact, GrMap } from "react-icons/gr"
 import { HiBars3 } from "react-icons/hi2"
 import ClipLoader from "react-spinners/ClipLoader"
 
-import { scrollToLocation } from "../../utils"
+import { scrollToLocation } from "../../utils/utils"
 import { MakeImgButton } from "../general/MakeImgButton"
 import MakeAutomaticNavbar from "../general/MakeAutomaticNavbar"
 

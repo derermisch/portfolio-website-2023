@@ -3,16 +3,15 @@ $Fs-huge: clamp(4rem, 10vw + 1rem, 13rem);
 $Fs-huge-mobile: clamp(2rem, 6vw + 1rem, 13rem);
 
 // h1
-// $Fs-h1: clamp(2rem, 1.6vw + 1rem, 5rem);
 $Fs-h1: clamp(3rem, 6vw + 1rem, 10rem);
 
 // h2
-// $Fs-h2: clamp(1.4rem, .6vw + 1rem, 4rem);
 $Fs-h2: clamp(2rem, 3vw + 1rem, 6rem);
+$Fs-h2-vp: 10vw;
 
 // h3
-// $Fs-h3: clamp(1rem, .5vw + 1rem, 2rem);
 $Fs-h3: clamp(1.5rem, .7vw + 1rem, 4rem);
+$Fs-h3-vp: 5vw;
 
 // h4
 $Fs-h4: clamp(1rem, .1vw + 1rem, 2rem);

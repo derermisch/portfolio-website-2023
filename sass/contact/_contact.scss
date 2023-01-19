@@ -3,3 +3,9 @@
 }
 
 @import "./formContainer";
+
+@include for-phone {
+    .contact {
+        min-height: unset;
+    }
+}

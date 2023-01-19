@@ -380,7 +380,7 @@ textarea {
   }
 }
 .home {
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,7 +502,7 @@ textarea {
   }
 }
 .projects {
-  height: 100vh;
+  min-height: 100vh;
   padding-right: unset;
 }
 .projects--heading {
@@ -653,6 +653,7 @@ textarea {
 @media (max-width: 500px) {
   .projects {
     padding-right: 40px;
+    min-height: unset;
   }
   .projects--gradient {
     display: none;
@@ -735,10 +736,34 @@ textarea {
   cursor: pointer;
 }
 
+@media (max-width: 500px) {
+  .aboutMe--listContainer--listItem--headingContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .aboutMe--listContainer--listItem--headingContainer--number {
+    font-size: 10vw;
+    width: unset;
+    -webkit-text-stroke: 0.5vw var(--foreground);
+  }
+  .aboutMe--listContainer--listItem--headingContainer--heading, .aboutMe--listContainer--listItem--headingContainer--arrow {
+    cursor: pointer;
+    font-size: 5vw;
+  }
+}
 @media (max-width: 1024px) {
   .aboutMe--listContainer {
     margin-left: 5vw;
     margin-top: 2.5vh;
+  }
+}
+@media (max-width: 500px) {
+  .aboutMe {
+    min-height: unset;
+  }
+  .aboutMe--listContainer {
+    width: 100%;
+    margin-left: 0;
   }
 }
 .contact {
@@ -905,6 +930,11 @@ textarea {
   .contact--form > input::placeholder,
 .contact--form > textarea::placeholder {
     visibility: visible;
+  }
+}
+@media (max-width: 500px) {
+  .contact {
+    min-height: unset;
   }
 }
 .loaderWrapper {

@@ -1,7 +1,7 @@
 @import "./navbar/navbar";
 
 .home {
-    height: 100vh;
+    min-height: 100vh;
     @include flexIt($dir: column, $justCont: space-between);
     text-align: center;
 

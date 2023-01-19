@@ -19,3 +19,14 @@
         margin-top: calc($MainElement-marginTop / 2);
     }
 }
+
+@include for-phone {
+    .aboutMe {
+        min-height: unset;
+
+        &--listContainer {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

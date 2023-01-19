@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
-import { scrollToLocation } from "../../utils"
+import { scrollToLocation } from "../../utils/utils"
 import ScrollUpButton from "./ScrollUpButton"
 
 export default function Footer() {

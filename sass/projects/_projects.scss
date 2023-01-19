@@ -1,5 +1,5 @@
 .projects {
-    height: 100vh;
+    min-height: 100vh;
     padding-right: unset; //To let projects flow to max width
 
     &--heading {
@@ -37,6 +37,7 @@
 @include for-phone {
     .projects {
         padding-right: $Sites-PaddingBlock-Mobile;
+        min-height: unset;
 
         &--gradient {
             display: none;

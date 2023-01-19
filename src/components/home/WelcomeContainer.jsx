@@ -1,6 +1,6 @@
 import { ClipLoader } from "react-spinners"
 
-import { scrollToLocation } from "../../utils"
+import { scrollToLocation } from "../../utils/utils"
 
 export default function WelcomeContainer({ welcomeData, lan }) {
     return (
