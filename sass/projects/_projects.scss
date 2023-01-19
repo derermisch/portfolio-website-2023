@@ -15,8 +15,8 @@
     }
 
     &--projectContainer {
-        margin-left: 10vw;
-        margin-top: 10vh;
+        margin-left: $MainElement-marginLeft;
+        margin-top: $MainElement-marginTop;
         @include flexIt($justCont: flex-start);
         gap: 2rem;
         overflow-x: scroll;
@@ -26,3 +26,10 @@
 }
 
 @import "./projectItem";
+
+@include for-smallLaptop {
+    .projects--projectContainer {
+        margin-left: calc($MainElement-marginLeft / 2);
+        margin-top: calc($MainElement-marginTop / 2);
+    }
+}

@@ -21,11 +21,11 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2rem, 3.5vw + 1rem, 6rem);
+  font-size: clamp(2rem, 3vw + 1rem, 6rem);
 }
 
 h3 {
-  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
 }
 
 h4 {
@@ -79,6 +79,16 @@ textarea {
   font-style: normal;
   color: var(--foreground);
   background-color: var(--background);
+}
+
+::-moz-selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+::selection {
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 ::-webkit-scrollbar {
@@ -467,7 +477,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
   font-weight: 500;
   text-decoration: none;
   height: 100%;
@@ -506,7 +516,7 @@ textarea {
 }
 .projects--projectContainer {
   margin-left: 10vw;
-  margin-top: 10vh;
+  margin-top: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -621,9 +631,15 @@ textarea {
     width: 20vw;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .projects--projectContainer--projectItem--img {
     width: 25vw;
+  }
+}
+@media (max-width: 1024px) {
+  .projects--projectContainer {
+    margin-left: 5vw;
+    margin-top: 2.5vh;
   }
 }
 .aboutMe {
@@ -674,33 +690,40 @@ textarea {
           flex-direction: row;
 }
 .aboutMe--listContainer--listItem--headingContainer--number {
-  font-size: clamp(2rem, 3.5vw + 1rem, 6rem);
+  font-size: clamp(2rem, 3vw + 1rem, 6rem);
   font-weight: 400;
   color: var(--background);
   -webkit-text-stroke: 0.2vw var(--foreground);
-  width: calc(clamp(2rem, 3.5vw + 1rem, 6rem) + 3.5%);
+  width: calc(clamp(2rem, 3vw + 1rem, 6rem) + 3.5%);
 }
 .aboutMe--listContainer--listItem--headingContainer--heading {
-  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
 }
 .aboutMe--listContainer--listItem--headingContainer--arrow {
   margin-left: 0.5rem;
   background-color: transparent;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
   color: var(--clr-action);
   border: none;
   cursor: pointer;
 }
 
+@media (max-width: 1024px) {
+  .aboutMe--listContainer {
+    margin-left: 5vw;
+    margin-top: 2.5vh;
+  }
+}
 .contact {
   min-height: 100vh;
 }
 
 .contact--form {
   margin-left: 10vw;
-  margin-top: 5vw;
+  margin-top: 5vh;
+  max-width: 1200px;
   display: grid;
   grid-template-rows: repeat(4, -webkit-min-content);
   grid-template-rows: repeat(4, min-content);
@@ -712,7 +735,7 @@ textarea {
           column-gap: 4em;
 }
 .contact--form > label {
-  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
 }
 .contact--form > input,
 .contact--form > textarea {
@@ -721,10 +744,23 @@ textarea {
   background-color: transparent;
   font-size: clamp(1rem, 0.5vw + 0.5rem, 2rem);
   font-family: soleil, sans-serif;
+  color: var(--foreground);
 }
-.contact--form > textarea {
-  height: 40vh;
-  resize: none;
+.contact--form > input::-webkit-input-placeholder, .contact--form > textarea::-webkit-input-placeholder {
+  visibility: hidden;
+}
+.contact--form > input::-moz-placeholder, .contact--form > textarea::-moz-placeholder {
+  visibility: hidden;
+}
+.contact--form > input:-ms-input-placeholder, .contact--form > textarea:-ms-input-placeholder {
+  visibility: hidden;
+}
+.contact--form > input::-ms-input-placeholder, .contact--form > textarea::-ms-input-placeholder {
+  visibility: hidden;
+}
+.contact--form > input::placeholder,
+.contact--form > textarea::placeholder {
+  visibility: hidden;
 }
 .contact--form > input:focus,
 .contact--form > textarea:focus {
@@ -732,6 +768,10 @@ textarea {
   border-style: dotted;
   border-color: var(--clr-action);
   caret-color: var(--foreground);
+}
+.contact--form > textarea {
+  height: 40vh;
+  resize: none;
 }
 
 .contact--form--submitContainer {
@@ -754,12 +794,94 @@ textarea {
   width: 60%;
   font-size: clamp(0.8rem, 0.3vw + 0.5rem, 1.5rem);
 }
+
 .contact--form--submitContainer--submitBtn {
-  font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
-  border: none;
+  white-space: nowrap;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 0.25rem;
+  border: 2px solid var(--clr-action);
+  padding: 0.25rem;
+  font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
   cursor: pointer;
 }
 
+@media (max-width: 1024px) {
+  .contact--form {
+    margin-left: 5vw;
+    margin-top: 2.5vh;
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+}
+@media (max-width: 820px) {
+  .contact--form {
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .contact--form--submitContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact--form--submitContainer > * {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .contact--form--submitContainer--submitBtn {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .contact--form {
+    margin-left: unset;
+    grid-template-rows: unset;
+    grid-template-columns: unset;
+    -webkit-column-gap: unset;
+       -moz-column-gap: unset;
+            column-gap: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact--form > * {
+    width: 100%;
+  }
+  .contact--form > label {
+    display: none;
+  }
+  .contact--form > input::-webkit-input-placeholder, .contact--form > textarea::-webkit-input-placeholder {
+    visibility: visible;
+  }
+  .contact--form > input::-moz-placeholder, .contact--form > textarea::-moz-placeholder {
+    visibility: visible;
+  }
+  .contact--form > input:-ms-input-placeholder, .contact--form > textarea:-ms-input-placeholder {
+    visibility: visible;
+  }
+  .contact--form > input::-ms-input-placeholder, .contact--form > textarea::-ms-input-placeholder {
+    visibility: visible;
+  }
+  .contact--form > input::placeholder,
+.contact--form > textarea::placeholder {
+    visibility: visible;
+  }
+}
 .loaderWrapper {
   position: fixed;
   width: 100%;

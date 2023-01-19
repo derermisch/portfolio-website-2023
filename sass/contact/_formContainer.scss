@@ -1,6 +1,7 @@
 .contact--form {
-    margin-left: 10vw;
-    margin-top: 5vw;
+    margin-left: $MainElement-marginLeft;
+    margin-top: $MainElement-marginTop;
+    max-width: $MainElemet-maxWidth;
 
     display: grid;
     grid-template-rows: repeat(4, min-content);
@@ -19,34 +20,96 @@
         background-color: transparent;
         font-size: $Fs-p;
         font-family: soleil, sans-serif;
+        color: var(--foreground);
+
+        &::placeholder {
+            visibility: hidden;
+        }
+
+        &:focus {
+            outline: none;
+            border-style: dotted;
+            border-color: var(--clr-action);
+            caret-color: var(--foreground);
+        }
     }
 
     >textarea {
         height: 40vh;
         resize: none;
     }
-
-    >input:focus,
-    >textarea:focus {
-        outline: none;
-        border-style: dotted;
-        border-color: var(--clr-action);
-        caret-color: var(--foreground);
-    }
 }
 
 .contact--form--submitContainer {
     grid-column: 2 / 3;
     @include flexIt($justCont: space-between, $alignIt: flex-start);
-    
+
     &--text {
         width: 60%;
         font-size: $Fs-p-small;
     }
-    
-    &--submitBtn {
-        font-size: $Fs-h3;
-        border: none;
-        cursor: pointer;
+}
+
+.contact--form--submitContainer--submitBtn {
+    white-space: nowrap;
+    display: inline-flex;
+    gap: .25rem;
+    border: 2px solid var(--clr-action);
+    padding: .25rem;
+    font-size: $Fs-h3;
+    cursor: pointer;
+}
+
+@include for-smallLaptop {
+    .contact--form {
+        margin-left: calc($MainElement-marginLeft / 2);
+        margin-top: calc($MainElement-marginTop / 2);
+        column-gap: 2rem;
+    }
+}
+
+@include for-tablet {
+    .contact--form {
+        column-gap: 1rem;
+    }
+
+    .contact--form--submitContainer {
+        flex-direction: column;
+
+        >* {
+            width: fit-content;
+        }
+
+        &--submitBtn {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@include for-phone {
+    .contact--form {
+        margin-left: unset;
+        // margin-top: unset;
+
+        grid-template-rows: unset;
+        grid-template-columns: unset;
+        // row-gap: unset;
+        column-gap: unset;
+        @include flexIt($dir: column, $alignIt: flex-start);
+
+        > * {
+            width: 100%;
+        }
+
+        > label {
+            display: none;
+        }
+
+        >input,
+        >textarea {
+            &::placeholder {
+                visibility: visible;
+            }
+        }
     }
 }

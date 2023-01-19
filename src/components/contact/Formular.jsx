@@ -8,6 +8,7 @@ import { SettingsContext } from "../general/SettingsContext"
 export default function Formular({ dataForForm }) {
     const { ref, inView, entry } = useInView({ threshold: .2 })
 
+    // focus on first input field when in view
     useEffect(() => {
         if (!inView || !entry.target) return
 
@@ -22,9 +23,7 @@ export default function Formular({ dataForForm }) {
 
     const [formData, setFormData] = useState(() => {
         return ({
-            anrede: "(Anrede wählen)",
             name: "",
-            tel: "",
             email: "",
             nachricht: ""
         })
@@ -79,7 +78,7 @@ export default function Formular({ dataForForm }) {
                     name="name"
                     type="text"
                     className="contact--form--nameField"
-                    // placeholder="Name*"
+                    placeholder="Name*"
                     value={formData.name}
                     onChange={updateFormData}
                     ref={ref}
@@ -91,7 +90,7 @@ export default function Formular({ dataForForm }) {
                     name="email"
                     type="email"
                     className="contact--form--emailField"
-                    // placeholder="E-Mail Adresse*"
+                    placeholder="E-Mail Adresse*"
                     value={formData.email}
                     onChange={updateFormData}
                     required
@@ -101,7 +100,7 @@ export default function Formular({ dataForForm }) {
                 <textarea
                     name="nachricht"
                     className="contact--form--messageLabel"
-                    // placeholder="Nachricht*"
+                    placeholder="Nachricht*"
                     onChange={updateFormData}
                     value={formData.nachricht}
                     maxLength="1500"
@@ -112,7 +111,10 @@ export default function Formular({ dataForForm }) {
                     <p className="contact--form--submitContainer--text">
                         {dataForForm.lawText[value]}
                     </p>
-                    <button className="contact--form--submitContainer--submitBtn" type="submit">{dataForForm.sendMessage[value]}✉️</button>
+                    <button className="contact--form--submitContainer--submitBtn" type="submit">
+                        <p className="contact--form--submitContainer--submitBtn--text">{dataForForm.sendMessage[value]}</p>
+                        <p className="contact--form--submitContainer--submitBtn--symbol">✉️</p>
+                    </button>
                 </div>
             </form>
             : <ClipLoader />

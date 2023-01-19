@@ -28,3 +28,8 @@ textarea {
     color: var(--foreground);
     background-color: var(--background);
 }
+
+::selection {
+    background-color: var(--foreground);
+    color: var(--background);
+}
