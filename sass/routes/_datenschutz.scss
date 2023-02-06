@@ -1,9 +1,13 @@
 .datenschutz {
     @include flexIt($dir: column, $alignIt: flex-start, $justCont: flex-start);
-    background-color: $Color-Background;
+    background-color: var(--background);
     // filter: ;
 
     &--heading {
         margin-block: 2rem;
+    }
+    &--lanDisclaimer {
+        margin-bottom: 2rem;
+        font-style: italic;
     }
 }

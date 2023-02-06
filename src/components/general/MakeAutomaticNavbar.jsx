@@ -12,6 +12,7 @@ export default function MakeAutomaticNavbar({
         </rect>
     </svg>,
     className,
+    backHomeText = "Back to home"
 }) {
     if (!children) {
         return <p>No children provided!</p>
@@ -81,7 +82,7 @@ export default function MakeAutomaticNavbar({
                         ?
                         children
                         :
-                        <Link to={"/"}>Zurück zur Startseite</Link>
+                        <Link to={"/"}>{backHomeText}</Link>
                 }
             </div>
         </>

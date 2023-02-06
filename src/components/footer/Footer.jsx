@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom"
 import { scrollToLocation } from "../../utils/utils"
 import ScrollUpButton from "./ScrollUpButton"
 
-export default function Footer() {
+export default function Footer({lan}) {
     const location = useLocation().pathname
     const [showHomeNavigation, setShowHomeNavigation] = useState(() => false)
 
@@ -29,7 +29,7 @@ export default function Footer() {
                             <a onClick={() => scrollToLocation(2)}>Kontakt</a>
                             <a onClick={() => scrollToLocation(3)}>Anfahrt</a>
                         </div>
-                        : <Link to={"/"}>Zurück zur Startseite</Link>
+                        : <Link to={"/"}>{lan === 0 ? "Zurück zur Startseite": "Back to home"}</Link>
                 }
 
                 <div className="footer--rechtliches">

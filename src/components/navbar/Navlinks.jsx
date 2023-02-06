@@ -16,7 +16,7 @@ export default function Navlinks({ navlinkData, lan }) {
     // make navbar, the links are mapped from the received data
     return (
         navlinkData ?
-            <MakeAutomaticNavbar className="nav--links">
+            <MakeAutomaticNavbar className="nav--links" backHomeText={lan === 0 ? "Zurück zur Startseite": "Back to home"}>
                 {navlinkData.map((data, i) => {
                     // Imgbutton, in case i want to add svgs for the links at one point
                     return <MakeImgButton key={i}>

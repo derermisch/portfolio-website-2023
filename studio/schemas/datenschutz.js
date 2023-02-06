@@ -6,8 +6,13 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-            name: 'text',
+            name: 'text_de',
             title: 'Datenschutz Text',
+            type: 'blockContent',
+        }),
+        defineField({
+            name: 'text_en',
+            title: 'Datenschutz Text Englisch',
             type: 'blockContent',
         }),
     ],

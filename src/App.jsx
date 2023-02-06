@@ -7,12 +7,12 @@ import { DataSource, getServerData } from "./components/general/DataSource"
 import Sites from "./components/routes/Sites"
 import Datenschutz from "./components/routes/Datenschutz"
 import Impressum from "./components/routes/Impressum"
-import Footer from "./components/footer/Footer"
 import FormHandle from "./components/routes/FormHandle"
 import { SettingsContext } from "./components/general/SettingsContext"
 import { getCurrentLanguage } from "./utils/language"
 import SettingsToggle from "./components/general/SettingsToggle"
 import { setCurrentLightMode } from "./utils/darkmode"
+import Footer from "./components/footer/Footer"
 
 export default function App() {
     //0 is german, 1 is english. This way it can be used as an index directly
@@ -34,22 +34,24 @@ export default function App() {
 
                     <Route path="/datenschutz" element=
                         {
-                            <DataSource getDataFunc={getServerData('*[_type == "datenschutz"][0].text')} resourceName={"text"}>
-                                <Datenschutz />
+                            <DataSource getDataFunc={getServerData('*[_type == "datenschutz"][0]{text_de, text_en}')} resourceName={"text"}>
+                                <Datenschutz lan={value} />
                             </DataSource>
                         }
                     />
 
                     <Route path="/impressum" element=
                         {
-                            <DataSource getDataFunc={getServerData('*[_type == "impressum"][0].text')} resourceName={"text"}>
-                                <Impressum />
+                            <DataSource getDataFunc={getServerData('*[_type == "impressum"][0]{text_de, text_en}')} resourceName={"text"}>
+                                <Impressum lan={value}/>
                             </DataSource>
                         }
                     />
 
                     <Route path="/formHandle" element={<FormHandle />} />
                 </Routes>
+
+                <Footer lan={value} />
             </SettingsContext.Provider>
 
             {/* <Footer /> */}

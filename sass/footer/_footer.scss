@@ -1,18 +1,23 @@
 .footer {
     @include flexIt($dir: row, $alignIt: flex-start);
     gap: 3rem;
-    background-color: $Color-DarkGreen;
+    background-color: var(--foreground);
     padding-block: $Sites-PaddingBlock;
 
     >* {
         @include flexIt($dir: column, $alignIt: flex-start);
         gap: .5rem;
+        color: var(--background);
+        background-color: var(--foreground);
     }
 }
 
-.footer--navigation {
+.footer--navigation, .footer--rechtliches {
     >a {
         cursor: pointer;
+        color: var(--background);
+        background-color: var(--foreground);
+        // text-decoration: none;
     }
 }
 
