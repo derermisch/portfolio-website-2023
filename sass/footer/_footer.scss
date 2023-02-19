@@ -13,6 +13,9 @@
 }
 
 .footer--navigation, .footer--rechtliches {
+    &--heading {
+        font-size: $Fs-h3;
+    }
     >a {
         cursor: pointer;
         color: var(--background);

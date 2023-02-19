@@ -43,7 +43,7 @@ export default function App() {
                     <Route path="/impressum" element=
                         {
                             <DataSource getDataFunc={getServerData('*[_type == "impressum"][0]{text_de, text_en}')} resourceName={"text"}>
-                                <Impressum lan={value}/>
+                                <Impressum lan={value} />
                             </DataSource>
                         }
                     />
@@ -51,7 +51,12 @@ export default function App() {
                     <Route path="/formHandle" element={<FormHandle />} />
                 </Routes>
 
-                <Footer lan={value} />
+                <DataSource
+                    getDataFunc={getServerData('*[_type == "nav"].navlink[]{ navlink,link}')}
+                    resourceName="navlinkData"
+                >
+                    <Footer lan={value} />
+                </DataSource>
             </SettingsContext.Provider>
 
             {/* <Footer /> */}

@@ -1,42 +1,63 @@
-import { Link } from "react-router-dom"
-import { GrHome, GrBusinessService, GrContact, GrMap } from "react-icons/gr"
-import { HiBars3 } from "react-icons/hi2"
 import ClipLoader from "react-spinners/ClipLoader"
+import { useState } from "react"
+import { useEffect } from "react"
 
-import { scrollToLocation } from "../../utils/utils"
+import { scrollToLocation, prepareNavLinkArray, throttle } from "../../utils/utils"
 import { MakeImgButton } from "../general/MakeImgButton"
 import MakeAutomaticNavbar from "../general/MakeAutomaticNavbar"
 
 export default function Navlinks({ navlinkData, lan }) {
+    const [navLinks, setNavLinks] = useState(() => null)
+
+    // Prepare navLinks object with naclinkData: get indexing right
+    // If there is a href link, then indexing is skipped
+    useEffect(() => {
+        if (!navlinkData && !lan) return
+
+        setNavLinks(prepareNavLinkArray(navlinkData, lan))
+    }, [navlinkData, lan])
+
+
     const toggleNavMenu = () => { //hacky solution
         document.querySelector(".hamburgerContainer").children[0].classList.toggle("openHamburger")
-        document.querySelector(".nav--links").classList.toggle("openNav")
+        document.querySelector(".nav--linkWrapper").classList.toggle("openNav")
+    }
+
+    const generateImgButtons = () => {
+        const imgButtons = []
+        for (let i = 0; i < navLinks.length; i++) {
+            if (navLinks[i].link) {
+                imgButtons.push(
+                    <MakeImgButton key={i}>
+                        <a
+                            className="nav--linkWrapper--links--link"
+                            href={navLinks[i].link}
+                        >
+                            {navLinks[i].navLink}
+                        </a>
+                    </MakeImgButton>
+                )
+            } else {
+                imgButtons.push(
+                    <MakeImgButton key={i}>
+                        <a
+                            className="nav--linkWrapper--links--link"
+                            onClick={() => scrollToLocation(navLinks[i].index, toggleNavMenu)}
+                        >
+                            {navLinks[i].navLink}
+                        </a>
+                    </MakeImgButton>
+                )
+            }
+        }
+        return imgButtons
     }
 
     // make navbar, the links are mapped from the received data
     return (
-        navlinkData ?
-            <MakeAutomaticNavbar className="nav--links" backHomeText={lan === 0 ? "Zurück zur Startseite": "Back to home"}>
-                {navlinkData.map((data, i) => {
-                    // Imgbutton, in case i want to add svgs for the links at one point
-                    return <MakeImgButton key={i}>
-                        {data.link ?
-                            <a
-                                className="nav--links--link"
-                                href={data.link}
-                            >
-                                {data.navlink[lan]}
-                            </a>
-                            :
-                            <a
-                                className="nav--links--link"
-                                onClick={() => scrollToLocation(i, toggleNavMenu)}
-                            >
-                                {data.navlink[lan]}
-                            </a>
-                        }
-                    </MakeImgButton>
-                })}
+        navLinks ?
+            <MakeAutomaticNavbar className="nav--linkWrapper" backHomeText={lan === 0 ? "Zurück zur Startseite" : "Back to home"}>
+                {generateImgButtons()}
             </MakeAutomaticNavbar>
             : <ClipLoader />
     )

@@ -19,6 +19,10 @@ body {
     scroll-behavior: smooth;
 }
 
+body.navOpen {
+    overflow: hidden;
+}
+
 button,
 a,
 textarea {

@@ -34,7 +34,9 @@ export function throttle(cb, delay = 250) {
     }
 }
 
+// TODO; find a more elegant way to do this..
 export const scrollToLocation = (locationIndex, onClickFunction = null) => {
+    document.body.classList.remove("navOpen")
     let goalEle = null
     switch (locationIndex) {
         case 0: {
@@ -42,15 +44,15 @@ export const scrollToLocation = (locationIndex, onClickFunction = null) => {
             break;
         }
         case 1: {
-            goalEle = document.querySelector(".angebote")
+            goalEle = document.querySelector(".projects")
             break;
         }
         case 2: {
-            goalEle = document.querySelector(".kontakt")
+            goalEle = document.querySelector(".aboutMe")
             break;
         }
         case 3: {
-            goalEle = document.querySelector(".anfahrt")
+            goalEle = document.querySelector(".contact")
             break;
         }
     }
@@ -60,6 +62,27 @@ export const scrollToLocation = (locationIndex, onClickFunction = null) => {
     onClickFunction && onClickFunction()
     // const navBar = document.querySelector(".welcome--navHamburger")
     // navBar.click() // closes menu on mobile
+}
+
+export const prepareNavLinkArray = (navlinkData, lan) => {
+    const tmp = []
+    let index = 0
+    for (let i = 0; i < navlinkData.length; i++) {
+        if (navlinkData[i].link) {
+            tmp.push({
+                index: navlinkData.length,
+                navLink: navlinkData[i].navlink[lan],
+                link: navlinkData[i].link
+            })
+        } else {
+            tmp.push({
+                index: index++,
+                navLink: navlinkData[i].navlink[lan],
+                link: null
+            })
+        }
+    }
+    return tmp
 }
 
 export function getImageUrl(name) {

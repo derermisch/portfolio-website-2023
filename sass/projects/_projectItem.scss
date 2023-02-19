@@ -26,6 +26,7 @@
     &--buttonContainer {
         @include flexIt($dir: column);
         min-width: 50%;
+        max-width: 80%;
         margin-bottom: 1.5rem;
         gap: .5rem;
     }
@@ -74,8 +75,35 @@
 @include for-phone {
     .projects--projectContainer--projectItem {
         width: 100%;
+
         &--img {
             width: 100%;
+        }
+    }
+
+    .projects--projectContainer--projectItem--buttonContainer {
+        >* {
+            font-size: $Fs-p-small;
+        }
+    }
+
+    .projects--projectContainer--projectItem--buttonContainer--gitHub {
+        &--text {
+            font-size: $Fs-p-small;
+        }
+    }
+}
+
+@include for-phone-small {
+    .projects--projectContainer--projectItem--buttonContainer {
+        >* {
+            font-size: $Fs-p-small;
+        }
+    }
+
+    .projects--projectContainer--projectItem--buttonContainer--gitHub {
+        &--text {
+            font-size: $Fs-p-small;
         }
     }
 }

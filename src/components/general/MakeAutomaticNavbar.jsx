@@ -34,6 +34,7 @@ export default function MakeAutomaticNavbar({
     const iconContainerRef = useRef(null)
     const linkContainerRef = useRef(null)
 
+
     useLayoutEffect(() => {
         /** @type{HTMLElement} */
         const iconContainerEle = iconContainerRef.current
@@ -62,6 +63,7 @@ export default function MakeAutomaticNavbar({
         /** @type{HTMLElement} */
         const linkContainerEle = linkContainerRef.current
 
+        document.body.classList.toggle("navOpen")
         iconContainerEle.children[0].classList.toggle("openHamburger")
         linkContainerEle.classList.toggle("openNav")
     }
@@ -71,19 +73,24 @@ export default function MakeAutomaticNavbar({
             <button
                 className="hamburgerContainer"
                 ref={iconContainerRef}
-                onClick={toggleMenu}
+                onClick={() => {
+                    toggleMenu()
+                    window.scrollTo({ top: 0, behavior: "auto" })
+                }}
             >
                 {icon}
             </button>
 
             <div className={className} ref={linkContainerRef}>
-                {
-                    showHomeNavigation
-                        ?
-                        children
-                        :
-                        <Link to={"/"}>{backHomeText}</Link>
-                }
+                <div className={className + "--links"}>
+                    {
+                        showHomeNavigation
+                            ?
+                            children
+                            :
+                            <Link to={"/"}>{backHomeText}</Link>
+                    }
+                </div>
             </div>
         </>
     )

@@ -22,7 +22,7 @@ export default function ScrollUpButton() {
                 scrollBtn.style.position = "sticky"
                 const distance = footer.getBoundingClientRect().top - scrollBtn.getBoundingClientRect().top
                 scrollBtn.style.opacity = 1 - distance / window.innerHeight
-                if (getComputedStyle(scrollBtn).opacity > 0.9) {
+                if (getComputedStyle(scrollBtn).opacity > 0.8) {
                     scrollBtn.style.opacity = 1
                 }
             } else {
