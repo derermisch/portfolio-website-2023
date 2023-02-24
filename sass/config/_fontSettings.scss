@@ -23,7 +23,8 @@ $Fs-p: clamp(1rem, .5vw + .5rem, 2rem);
 $Fs-p-small: 10px;
 
 // Link
-$Fs-link: clamp(1rem, .3vw + 1rem, 2rem);
+// $Fs-link: clamp(1rem, .3vw + 1rem, 2rem);
+$Fs-link: clamp(1rem, .2vw + 1rem, 2rem);
 
 h1 {
     font-size: $Fs-h1;

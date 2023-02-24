@@ -58,7 +58,7 @@
     transform: translateX((var(--height)));
 }
 
-@include for-phone {
+@include for-phone-and-phone-landscape {
     .settingsToggle {
         right: unset;
         left: $Sites-PaddingInline-Mobile;

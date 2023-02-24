@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import { ClipLoader } from "react-spinners"
+import { useLocation } from "react-router-dom"
 
 import App from "./App"
 
 export default function AppWrapper() {
     const [allLoaded, setAllLoaded] = useState(() => false)
+    const location = useLocation().pathname
 
     useEffect(() => {
 
@@ -26,6 +28,11 @@ export default function AppWrapper() {
             return () => window.removeEventListener('load', onPageLoad);
         }
     }, [])
+
+    useEffect(() => {
+        // console.log("TEST")
+        document.body.classList.remove("navOpen")
+    }, [location])
 
     return (
         <>

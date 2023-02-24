@@ -44,8 +44,8 @@ $hamburgerWidth: 40px;
     }
 }
 
-@include for-phone {
+@include for-phone-and-phone-landscape {
     .hamburgerContainer {
-        display: block;
+        display: block !important;
     }
 }

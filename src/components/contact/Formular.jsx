@@ -3,6 +3,7 @@ import { ClipLoader } from "react-spinners"
 import { useNavigate } from "react-router-dom"
 import { useInView } from "react-intersection-observer"
 
+import { determineTouchScreen } from "../../utils/utils"
 import { SettingsContext } from "../general/SettingsContext"
 
 export default function Formular({ dataForForm }) {
@@ -13,7 +14,8 @@ export default function Formular({ dataForForm }) {
         if (!inView || !entry.target) return
 
         const field = entry.target
-        field.focus()
+        if (!determineTouchScreen())
+            field.focus()
     }, [inView])
 
     // language

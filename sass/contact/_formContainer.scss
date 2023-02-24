@@ -22,9 +22,9 @@
         font-family: soleil, sans-serif;
         color: var(--foreground);
 
-        &::placeholder {
-            visibility: hidden;
-        }
+        // &::placeholder {
+        //     visibility: hidden;
+        // }
 
         &:focus {
             outline: none;
@@ -105,11 +105,11 @@
             display: none;
         }
 
-        >input,
-        >textarea {
-            &::placeholder {
-                visibility: visible;
-            }
-        }
+        // >input,
+        // >textarea {
+        //     &::placeholder {
+        //         visibility: visible;
+        //     }
+        // }
     }
 }

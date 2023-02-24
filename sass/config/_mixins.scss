@@ -11,6 +11,18 @@
     }
 }
 
+@mixin for-phone-landscape {
+    @media ((max-height: 600px) and (orientation: landscape)) {
+        @content;
+    }
+}
+
+@mixin for-phone-and-phone-landscape {
+    @media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
+        @content;
+    }
+}
+
 @mixin for-phone-medium {
     @media (max-width: 375px) {
         @content;
@@ -36,7 +48,7 @@
 }
 
 @mixin for-biggerScreens {
-    @media (width >= 1920px){
+    @media (width >=1920px) {
         @content;
     }
 }

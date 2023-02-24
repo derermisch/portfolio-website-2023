@@ -2,6 +2,10 @@ export const determineIfMobile = () => {
     return (window.innerWidth <= 500) ? true : false
 }
 
+export const determineTouchScreen = () => {
+    return window.matchMedia("(pointer: coarse)").matches
+}
+
 // export let isMobile = determineIfMobile()
 
 // window.addEventListener("resize", () => {
@@ -65,6 +69,7 @@ export const scrollToLocation = (locationIndex, onClickFunction = null) => {
 }
 
 export const prepareNavLinkArray = (navlinkData, lan) => {
+    if (!navlinkData || (lan !== 1 && lan !== 0)) return
     const tmp = []
     let index = 0
     for (let i = 0; i < navlinkData.length; i++) {
