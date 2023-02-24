@@ -1,14 +1,15 @@
 import { PortableText } from "@portabletext/react"
 
 
-export default function AboutMeItem({ number, heading, lan, textDe, textEn, toggleVisibility, visibility, isMobile }) {
+export default function AboutMeItem({ number, heading, lan, textDe, textEn, toggleVisibility, visibility, /*isMobile*/ }) {
     return (
         <div className="aboutMe--listContainer--listItem">
             <div className="aboutMe--listContainer--listItem--headingContainer">
                 <h3 className="aboutMe--listContainer--listItem--headingContainer--number">{number.toString().padStart(2, "0")}</h3>
                 <h4
                     className="aboutMe--listContainer--listItem--headingContainer--heading"
-                    onClick={isMobile ? (() => toggleVisibility(number)) : () => { }}
+                    // onClick={isMobile ? (() => toggleVisibility(number)) : () => { }}
+                    onClick={() => toggleVisibility(number)}
                 >
                     {heading[lan]}
                 </h4>

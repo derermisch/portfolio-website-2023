@@ -45,7 +45,7 @@
         border: 3px solid var(--background);
     }
 
-    >:first-child {
+    &--liveView {
         border-color: var(--clr-action);
     }
 }

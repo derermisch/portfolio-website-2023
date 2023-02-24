@@ -53,12 +53,12 @@ export default function ProjectItem({ imgUrl, heading, liveLink, githubLink }) {
                 <img className="projects--projectContainer--projectItem--img" src={imgUrl} alt="" ref={imgRef} />
                 <h3 className="projects--projectContainer--projectItem--heading" ref={headingRef}>{heading[value]}</h3>
                 <div className="projects--projectContainer--projectItem--buttonContainer">
-                    <a className="projects--projectContainer--projectItem--buttonContainer--liveView" href={liveLink}>
+                    {liveLink && <a className="projects--projectContainer--projectItem--buttonContainer--liveView" target={"_blank"} href={liveLink}>
                         {value === 0 ? "Live ansehen" : "Live view"}
-                    </a>
-                    <MakeImgButton>
-                        <a className="projects--projectContainer--projectItem--buttonContainer--gitHub" href={githubLink}>GitHub</a>
-                    </MakeImgButton>
+                    </a>}
+                    {githubLink && <MakeImgButton>
+                        <a className="projects--projectContainer--projectItem--buttonContainer--gitHub" href={githubLink} target={"_blank"}>GitHub</a>
+                    </MakeImgButton>}
                 </div>
             </div>
         </>

@@ -665,7 +665,7 @@ textarea {
   padding: 0.5rem;
   border: 3px solid var(--background);
 }
-.projects--projectContainer--projectItem--buttonContainer > :first-child {
+.projects--projectContainer--projectItem--buttonContainer--liveView {
   border-color: var(--clr-action);
 }
 
@@ -785,6 +785,7 @@ textarea {
 }
 .aboutMe--listContainer--listItem--headingContainer--heading {
   font-size: clamp(1.5rem, 0.7vw + 1rem, 4rem);
+  cursor: pointer;
 }
 .aboutMe--listContainer--listItem--headingContainer--arrow {
   margin-left: 0.5rem;
@@ -808,7 +809,6 @@ textarea {
     -webkit-text-stroke: 0.5vw var(--foreground);
   }
   .aboutMe--listContainer--listItem--headingContainer--heading, .aboutMe--listContainer--listItem--headingContainer--arrow {
-    cursor: pointer;
     font-size: 5vw;
   }
 }
@@ -1107,6 +1107,10 @@ textarea {
 }
 .impressum--heading {
   margin-block: 2rem;
+}
+.impressum--lanDisclaimer {
+  margin-bottom: 2rem;
+  font-style: italic;
 }
 
 .loaderWrapper {

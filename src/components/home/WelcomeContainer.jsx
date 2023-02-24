@@ -10,13 +10,14 @@ export default function WelcomeContainer({ welcomeData, lan }) {
                 <div className="home--welcomeContainer--buttonContainer">
                     <a
                         className="home--welcomeContainer--buttonContainer--button"
-                        onClick={() => scrollToLocation(0)}
+                        onClick={() => scrollToLocation(3)}
                     >
                         {welcomeData.contact[lan]}
                     </a>
                     <a
                         className="home--welcomeContainer--buttonContainer--button"
                         href={welcomeData.githubLink}
+                        target={"_blank"}
                     >
                         {welcomeData.github[lan]}
                     </a>

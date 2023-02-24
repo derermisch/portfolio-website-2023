@@ -21,6 +21,7 @@
 
     &--heading {
         font-size: $Fs-h3;
+        cursor: pointer;
     }
 
     &--arrow {
@@ -47,7 +48,7 @@
 
         &--heading,
         &--arrow {
-            cursor: pointer;
+            // cursor: pointer;
             font-size: $Fs-h3-vp;
         }
     }

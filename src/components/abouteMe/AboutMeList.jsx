@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react"
 import { ClipLoader } from "react-spinners"
 
 import { SettingsContext } from "../general/SettingsContext"
-import { determineIfMobile } from "../../utils/utils"
+// import { determineIfMobile } from "../../utils/utils"
 import AboutMeItem from "./AboutMeItem"
 
 export default function AboutMeList({ aboutMeData }) {
@@ -48,7 +48,7 @@ export default function AboutMeList({ aboutMeData }) {
                         textEn={aboutItem.itemTextEn}
                         toggleVisibility={toggleVisibility}
                         visibility={(visibleArr ? visibleArr[i] : false)}
-                        isMobile={determineIfMobile()}
+                        // isMobile={determineIfMobile()}
                     />
                 })}
             </div>
