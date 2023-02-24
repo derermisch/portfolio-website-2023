@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'fabe-website',
 
-  projectId: 'nypxrwlh',
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
