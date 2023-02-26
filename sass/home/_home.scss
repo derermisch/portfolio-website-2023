@@ -123,6 +123,6 @@ $Button-height: calc($Max-height - $Img-height);
 
 @include or-test {
     .home {
-        background-color: yellow;
+        background-color: rebeccapurple;
     }
 }

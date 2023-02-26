@@ -553,9 +553,9 @@ textarea {
     font-size: clamp(1rem, 0.1vw + 1rem, 2rem);
   }
 }
-@media screen and (orientation: landscape) {
+@media screen and ((orientation: landscape) or (min-height: 200px)) {
   .home {
-    background-color: yellow;
+    background-color: rebeccapurple;
   }
 }
 .projects {
