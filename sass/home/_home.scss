@@ -121,8 +121,8 @@ $Button-height: calc($Max-height - $Img-height);
     }
 }
 
-@include or-test {
-    .home {
-        background-color: rgb(64, 157, 160);
-    }
-}
+// @include or-test {
+//     .home {
+//         background-color: rgb(64, 157, 160);
+//     }
+// }

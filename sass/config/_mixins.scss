@@ -21,7 +21,7 @@
 
 @mixin for-phone-and-phone-landscape {
     @media screen {
-        @media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
+        @media ((max-height: 600px) and (orientation: landscape)), (max-width: 500px) {
             @content;
         }
     }
@@ -63,8 +63,8 @@
     }
 }
 
-@mixin or-test {
-    @media screen and (orientation: landscape), (min-height: 200px) {
-        @content;
-    }
-}
+// @mixin or-test {
+//     @media screen and (orientation: landscape), (min-height: 200px) {
+//         @content;
+//     }
+// }
