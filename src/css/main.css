@@ -217,14 +217,16 @@ textarea {
           transform: translateX(var(--height));
 }
 
-@media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
-  .settingsToggle {
-    right: unset;
-    left: 40px;
-    gap: 5px;
-  }
-  .toggle {
-    --width: 40px;
+@media screen {
+  @media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
+    .settingsToggle {
+      right: unset;
+      left: 40px;
+      gap: 5px;
+    }
+    .toggle {
+      --width: 40px;
+    }
   }
 }
 #icon_sun {
@@ -285,9 +287,11 @@ textarea {
           transform: rotateZ(-45deg) translateY(-20%);
 }
 
-@media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
-  .hamburgerContainer {
-    display: block !important;
+@media screen {
+  @media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
+    .hamburgerContainer {
+      display: block !important;
+    }
   }
 }
 .nav {
@@ -353,56 +357,58 @@ textarea {
   font-size: clamp(1rem, 0.2vw + 1rem, 2rem);
 }
 
-@media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
-  .nav {
-    width: 100%;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .nav--linkWrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    visibility: hidden;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    -webkit-transition: all 500ms ease-in-out;
-    transition: all 500ms ease-in-out;
-    overflow-y: auto;
-    -ms-scroll-chaining: none;
-        overscroll-behavior: contain;
-  }
-  .nav--linkWrapper--links {
-    height: 100%;
-    gap: 1rem;
-    background-color: var(--foreground);
-    padding-block: 5rem;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .nav--linkWrapper--links > :nth-child(3) {
-    background-color: var(--foreground) !important;
-    padding: 5px !important;
-    border: 2px solid var(--clr-action) !important;
-  }
-  .nav--linkWrapper--links > a {
-    background-color: var(--foreground);
-    color: var(--background);
-  }
-  .nav--linkWrapper--links--link > * {
-    background-color: var(--foreground);
-    color: var(--background);
-  }
-  .nav--linkWrapper.openNav {
-    visibility: visible;
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+@media screen {
+  @media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
+    .nav {
+      width: 100%;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+    .nav--linkWrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      visibility: hidden;
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      -webkit-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+      overflow-y: auto;
+      -ms-scroll-chaining: none;
+          overscroll-behavior: contain;
+    }
+    .nav--linkWrapper--links {
+      height: 100%;
+      gap: 1rem;
+      background-color: var(--foreground);
+      padding-block: 5rem;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+    .nav--linkWrapper--links > :nth-child(3) {
+      background-color: var(--foreground) !important;
+      padding: 5px !important;
+      border: 2px solid var(--clr-action) !important;
+    }
+    .nav--linkWrapper--links > a {
+      background-color: var(--foreground);
+      color: var(--background);
+    }
+    .nav--linkWrapper--links--link > * {
+      background-color: var(--foreground);
+      color: var(--background);
+    }
+    .nav--linkWrapper.openNav {
+      visibility: visible;
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+    }
   }
 }
 .home {
@@ -549,7 +555,7 @@ textarea {
 }
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .home {
-    background-color: greenyellow;
+    background-color: yellow;
   }
 }
 .projects {
