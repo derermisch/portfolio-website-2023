@@ -35,6 +35,25 @@
     }
 }
 
+.aboutMe--listContainer--listItem--textContainer {
+    >p {
+        font-size: $Fs-p;
+        animation: fadeIn 100ms ease-in-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0vw);
+    }
+}
+
 @include for-phone {
     .aboutMe--listContainer--listItem--headingContainer {
         flex-wrap: wrap;

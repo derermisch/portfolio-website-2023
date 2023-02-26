@@ -49,7 +49,7 @@ export default function ProjectItem({ imgUrl, heading, liveLink, githubLink }) {
     return (
         <>
             {/* <div className="projects--projectContainer--gradient"></div> */}
-            <div className="projects--projectContainer--projectItem">
+            <div className="projects--projectContainer--projectItem" onClick={() => window.open("https://www.mozilla.org/", "_blank")}>
                 <img className="projects--projectContainer--projectItem--img" src={imgUrl} alt="" ref={imgRef} />
                 <h3 className="projects--projectContainer--projectItem--heading" ref={headingRef}>{heading[value]}</h3>
                 <div className="projects--projectContainer--projectItem--buttonContainer">

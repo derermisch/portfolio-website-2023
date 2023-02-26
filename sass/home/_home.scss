@@ -38,6 +38,7 @@ $Button-height: calc($Max-height - $Img-height);
         margin-right: 6vw;
         margin-bottom: -10px;
         object-fit: cover;
+        // animation: slideFromTop 150ms ease-in-out 500ms;
     }
 
     &--buttonContainer {
@@ -120,6 +121,22 @@ $Button-height: calc($Max-height - $Img-height);
         }
     }
 }
+
+// @keyframes slideFromTop {
+//     0% {
+//         transform: translateY(-100vh);
+//         // transform: scale(.5);
+//     }
+
+//     90% {
+//         transform: translateY(10vh);
+//     }
+
+//     100% {
+//         transform: translateY(0vh);
+//         // transform: scale(1);
+//     }
+// }
 
 // @include or-test {
 //     .home {

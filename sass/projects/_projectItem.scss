@@ -6,6 +6,9 @@
     border: 1px solid var(--background);
     width: min-content;
     align-self: stretch; //to stretch all to the highest item
+    cursor: pointer;
+
+    transition: all 150ms ease-in-out;
 
     &--img {
         width: 15vw; //This determines the width of projectItem
@@ -29,6 +32,10 @@
         max-width: 80%;
         margin-bottom: 1.5rem;
         gap: .5rem;
+    }
+
+    &:hover {
+        transform: scale(.97);
     }
 }
 

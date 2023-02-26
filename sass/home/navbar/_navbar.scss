@@ -20,17 +20,29 @@
         padding: 5px;
         border: 4px solid var(--foreground);
     }
-
+    
     &--link {
         @include flexIt($dir: row);
         text-decoration: none;
         font-weight: 500;
         cursor: pointer;
+        transition: transform 150ms ease-in-out;
     }
 
     &--link>* {
         font-size: $Fs-link;
     }
+}
+
+.nav--linkWrapper--links--link:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+    text-decoration-color: var(--clr-action);
+}
+
+.nav--linkWrapper--links>:nth-child(3):hover{
+    border-color: var(--clr-action);
+    text-decoration: none !important;
 }
 
 @include for-phone-and-phone-landscape {
