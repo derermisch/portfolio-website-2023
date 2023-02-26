@@ -48,7 +48,13 @@ export default function App() {
                         }
                     />
 
-                    <Route path="/formHandle" element={<FormHandle />} />
+                    <Route path="/formHandle" element=
+                        {
+                            <DataSource getDataFunc={getServerData('*[_type == "contact"][0]{reqSuccess, reqFail}')} resourceName={"requestInfo"}>
+                                <FormHandle lan={value} />
+                            </DataSource>
+                        }
+                    />
                 </Routes>
 
                 <DataSource

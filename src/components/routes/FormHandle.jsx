@@ -1,27 +1,26 @@
 import { useLocation, Link } from "react-router-dom"
+import { ClipLoader } from "react-spinners"
 
-const FormHandle = () => {
+export default function FormHandle({ requestInfo, lan }) {
     const locationState = useLocation().state
-    // console.log(locationState)
 
     return (
-        <section className="formHandle site">
-            {
-                locationState.wasOk
-                    ?
-                    <p className="formHandle--message">
-                        Danke für ihre Nachricht {locationState.formData.anrede} {locationState.formData.name}.
-                        Ich versuche mich so schnell wie möglich bei Ihnen zurück zu melden.
-                    </p>
-                    :
-                    <p className="formHandle--message">
-                        Entschuldigung, da ist wohl etwas schief gelaufen.
-                        Bitte probieren Sie es mit einem Anruf.<br />
-                    </p>
-            }
-            <Link className="formHandle--backLink" to={"/"}>Zurück zur Startseite</Link>
-        </section>
+        requestInfo ?
+            <section className="formHandle site">
+                {
+                    <div className="formHandle--message">
+                        {
+                            locationState.wasOk 
+                                ?
+                                <p className="message">{requestInfo.reqSuccess[lan]}</p>
+                                :
+                                <p className="message">{requestInfo.reqFail[lan]}</p>
+                        }
+
+                    </div>
+                }
+                <Link className="formHandle--backLink" to={"/"}>Zurück zur Startseite</Link>
+            </section>
+            : <ClipLoader />
     )
 }
-
-export default FormHandle

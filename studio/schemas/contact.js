@@ -41,6 +41,18 @@ export default defineType({
             type: 'array',
             of: [{ type: "string" }],
         }),
+        defineField({
+            name: "reqSuccess",
+            title: "Anfrage Erfolg",
+            type: "array",
+            of: [{ type: "string" }]
+        }),
+        defineField({
+            name: "reqFail",
+            title: "Anfrage Technischer Fehler",
+            type: "array",
+            of: [{ type: "string" }]
+        }),
     ],
 
     preview: {
