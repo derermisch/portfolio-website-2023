@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 
 import AppWrapper from './AppWrapper'
 import ScrollToTop from './components/general/ScrollToTop'
-import './css/main.min.css'
+import './css/main.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
