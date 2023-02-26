@@ -12,7 +12,7 @@
 }
 
 @mixin for-phone-landscape {
-    @media all and ((max-height: 600px) and (orientation: landscape)) {
+    @media screen and (max-height: 600px) and (orientation: landscape) {
         @content;
     }
 }
