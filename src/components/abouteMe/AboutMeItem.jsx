@@ -9,7 +9,10 @@ export default function AboutMeItem({ number, heading, lan, textDe, textEn, togg
                 <h4
                     className="aboutMe--listContainer--listItem--headingContainer--heading"
                     // onClick={isMobile ? (() => toggleVisibility(number)) : () => { }}
-                    onClick={() => toggleVisibility(number)}
+                    onClick={() => {
+                        toggleVisibility(number)
+                        document.querySelectorAll('.aboutMe--listContainer--listItem--headingContainer--heading')[number].scrollIntoView({ behavior: "smooth", block: "center"});
+                    }}
                 >
                     {heading[lan]}
                 </h4>
