@@ -64,7 +64,7 @@
 }
 
 @mixin or-test {
-    @media screen and ((min-width: 200px) or (min-height: 200px)) {
+    @media screen and (orientation: landscape) {
         @content;
     }
 }
