@@ -121,6 +121,6 @@ $Button-height: calc($Max-height - $Img-height);
 
 @include for-phone-landscape {
     .home {
-        background-color: red;
+        background-color: blue;
     }
 }

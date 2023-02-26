@@ -549,7 +549,7 @@ textarea {
 }
 @media ((max-height: 600px) and (orientation: landscape)) {
   .home {
-    background-color: red;
+    background-color: blue;
   }
 }
 .projects {
