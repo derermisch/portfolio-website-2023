@@ -74,9 +74,10 @@ $Button-height: calc($Max-height - $Img-height);
             font-size: $Fs-huge-mobile;
         }
     }
-    
+
     .home--welcomeContainer {
         margin-bottom: 1.5rem;
+
         &--img {
             height: $Img-height;
             margin-right: 10vw;
@@ -100,9 +101,10 @@ $Button-height: calc($Max-height - $Img-height);
             font-size: $Fs-huge-mobile;
         }
     }
-    
+
     .home--welcomeContainer {
         margin-bottom: 1.5rem;
+
         &--img {
             height: $Img-height;
             // margin-right: 10vw;
@@ -119,7 +121,7 @@ $Button-height: calc($Max-height - $Img-height);
     }
 }
 
-@include for-phone-landscape {
+@include or-test {
     .home {
         background-color: yellow;
     }
