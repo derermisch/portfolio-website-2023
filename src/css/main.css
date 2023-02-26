@@ -547,6 +547,11 @@ textarea {
     font-size: clamp(1rem, 0.1vw + 1rem, 2rem);
   }
 }
+@media ((max-height: 600px) and (orientation: landscape)) or (max-width: 500px) {
+  .home {
+    background-color: red;
+  }
+}
 .projects {
   min-height: 100vh;
   padding-right: unset;
